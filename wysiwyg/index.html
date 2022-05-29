@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wysiwyg</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3710ca860c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1 class="title">나만의 wysiwyg 에디터</h1>
+    <article id="app">
+        <ul class="options">
+            <li><button type="button" data-command="h1">H1</button></li>
+            <li><button type="button" data-command="h2">H2</button></li>
+            <li><button type="button" data-command="h3">H3</button></li>
+            <li><button type="button" data-command="p">P</button></li>
+            <li><button type="button" data-command="bold">
+                    <i class="fa-solid fa-bold"></i>
+                </button>
+            </li>
+            <li><button type="button" data-command="italic">
+                    <i class="fa-solid fa-italic"></i>
+                </button>
+            </li>
+            <li><button type="button" data-command="underline">
+                    <i class="fa-solid fas fa-underline"></i>
+                </button>
+            </li>
+            <li><button type="button" data-command="strikeThrough">
+                    <i class="fa-solid fa-strikethrough"></i>
+                </button>
+            </li>
+            <li><button type="button" data-command="justifyLeft">
+                    <i class="fa-solid fa-align-left"></i>
+                </button>
+            </li>
+            <li><button type="button" data-command="justifyCenter">
+                    <i class="fa-solid fas fa-align-center"></i>
+                </button>
+            </li>
+            <li><button type="button" data-command="justifyRight">
+                    <i class="fa-solid fa-align-right"></i>
+                </button>
+            </li>
+            <li><button type="button" data-command="justifyFull">
+                    <i class="fa-solid fas fa-align-justify"></i>
+                </button>
+            </li>
+
+        </ul>
+        <div class="editor" contenteditable="true">
+            <p>텍스트를 입력하세요.</p>
+        </div>
+    </article>
+
+    <script>
+        // 행복 버전
+        // document.querySelectorAll('.options button').forEach(item => item.addEventListener('click', function () {
+        //     const command = item.dataset.command;
+        //     // if 부분만 긁은 부분아니여도 블럭으로 처리하고 다 먹히는것
+        //     if (command === 'h1' || command === 'h2' || command === 'h3' || command === 'p') {
+        //         document.execCommand('formatBlock', false, command);
+        //     } else {
+        //         document.execCommand(command);
+        //     }
+
+        // }));
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+#app {
+    overflow: hidden;
+    border: 1px solid darkgrey;
+    border-radius: 10px;
+}
+
+.editor {
+    min-height: 150px;
+    padding: 10px;
+}
+
+.title {
+    color: cadetblue;
+}
+
+.options {
+    display: flex;
+    padding: 8px;
+    margin: 0;
+    list-style-type: none;
+    border-bottom: 1px solid darkgrey;
+    background-color: blanchedalmond;
+}
+
+.options li:nth-child(4n) {
+    margin-right: 8px;
+}
+
+.options li button {
+    display: inline-block;
+    width: 27px;
+    background-color: burlywood;
+    border: 1px solid darkgrey;    
+    padding: 4px;
+}
+
+.options li button:hover {
+    background-color: cadetblue;
+    cursor: pointer;
+}
