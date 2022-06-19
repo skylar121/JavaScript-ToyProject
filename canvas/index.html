@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border:  1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!-- <canvas></canvas>만 넣으면 캔버스 시작하겠다는 뜻~-->
+    <canvas width="500" height=500""></canvas>
+
+    <!-- 캔버스에서 뭔가 하려면 전부 JS로~ -->
+    <script>
+        const canvas = document.querySelector('canvas');
+        //ctx는 거의 펜,연필같은거라고 보면 됨~ 도형 그릴 수 있게 해준다
+        const ctx = canvas.getContext('2d');
+
+        // fillStyle="color"가 도형 그리기 전에 먼저 지정되어야한다.
+        // filRect(x,y,w,h) 
+        // ctx.fillStyle = "orange";
+        // // 좌표
+        // ctx.fillRect(185, 185, 30, 30);
+
+        // ctx.fillStyle = "";
+        // ctx.fillRect(300, 300, 30, 30);
+        // ctx.strokeStyle = "blue";
+        // ctx.lineWidth = "30";
+
+        // // beginPath: 나이제 선그릴거야!
+        // ctx.beginPath(); // 연필들어
+        // // 선의 시작점 moveTo(x,y)에서 선의 끝점 lineTo(x,y)로~ 그릴거야! stoke()
+        // ctx.moveTo(10, 150);  // 선을 여기에서 시작해
+        // ctx.lineTo(350, 300); // 선을 이쪽으로 그려, moveTo, lineTo가 합쳐져 하나의 선
+        // ctx.stroke(); // 브라우저 렌더링
+
+        // 원을 그릴때는 시작과 끝 래디언 (0부터 시작, 3.14로 하면 180도, 3.14*2 - 360도, 3.14/2 - 90도)
+        // 오른쪽 가운데에서 시작, 시계방향, 시계반대방향 설정가능
+
+        // ctx.lineWidth = 20;
+        // ctx.beginPath();
+        // // arc (원중심 좌표 x, y, 반지름의 길이, 시작 래디언 값, 끝나는 래디언 값, 어느 방향으로 그릴 것인지 - false 시계방향이 기본값, true가 반시계방향)
+        // ctx.arc(200, 200, 30, 0, Math.PI * 2, false);
+        // ctx.stroke();
+        // ctx.fill(); // 모든 도형에 다 채워지지만, fill 안하려면 
+
+        // ctx.strokeStyle = "orange";
+        // ctx.lineWidth = "50";
+        // ctx.beginPath(); // 연필들어
+        // ctx.moveTo(0, 0);  // 선을 여기에서 시작해
+        // ctx.lineTo(0, 100); // 선을 이쪽으로 그려, moveTo, lineTo가 합쳐져 하나의 선
+        // ctx.stroke(); // 브라우저 렌더링
+
+        // ctx.strokeStyle = "orange";
+        // ctx.lineWidth = "30";
+        // ctx.beginPath(); // 연필들어
+        // ctx.moveTo(0, 100);  // 선을 여기에서 시작해
+        // ctx.lineTo(100, 100); // 선을 이쪽으로 그려, moveTo, lineTo가 합쳐져 하나의 선
+        // ctx.stroke(); // 브라우저 렌더링
+
+        // ctx.strokeStyle = "orange";
+        // ctx.lineWidth = "30";
+        // ctx.beginPath(); // 연필들어
+        // ctx.moveTo(120, 0);  // 선을 여기에서 시작해
+        // ctx.lineTo(120, 115); // 선을 이쪽으로 그려, moveTo, lineTo가 합쳐져 하나의 선
+        // ctx.stroke(); // 브라우저 렌더링
+
+        // ctx.lineWidth = 30;
+        // ctx.beginPath();
+        // // arc (원중심 좌표 x, y, 반지름의 길이, 시작 래디언 값, 끝나는 래디언 값, 어느 방향으로 그릴 것인지 - false 시계방향이 기본값, true가 반시계방향)
+        // ctx.arc(200, 60, 45, 0, Math.PI * 2, false);
+        // ctx.stroke();
+
+        // ctx.strokeStyle = "orange";
+        // ctx.lineWidth = "30";
+        // ctx.beginPath(); // 연필들어
+        // ctx.moveTo(280, 0);  // 선을 여기에서 시작해
+        // ctx.lineTo(280, 120); // 선을 이쪽으로 그려, moveTo, lineTo가 합쳐져 하나의 선
+        // ctx.stroke(); // 브라우저 렌더링
+
+        // ctx.strokeStyle = "orange";
+        // ctx.lineWidth = "30";
+        // ctx.beginPath(); // 연필들어
+        // ctx.moveTo(280, 0);  // 선을 여기에서 시작해
+        // ctx.lineTo(360, 112); // 선을 이쪽으로 그려, moveTo, lineTo가 합쳐져 하나의 선
+        // ctx.stroke(); // 브라우저 렌더링
+
+        // ctx.strokeStyle = "orange";
+        // ctx.lineWidth = "30";
+        // ctx.beginPath(); // 연필들어
+        // ctx.moveTo(360, 0);  // 선을 여기에서 시작해
+        // ctx.lineTo(360, 120); // 선을 이쪽으로 그려, moveTo, lineTo가 합쳐져 하나의 선
+        // ctx.stroke(); // 브라우저 렌더링
+
+
+        // 재현님 코드
+        ctx.fillRect(0, 0, 30, 90);
+        ctx.fillRect(0, 90, 90, 30);
+        ctx.fillRect(120, 0, 30, 120);
+
+        ctx.lineWidth = 30;
+        ctx.beginPath();
+        ctx.arc(250, 60, 45, 0, Math.PI * 2, false);
+        ctx.stroke();
+
+
+        ctx.fillRect(350, 0, 30, 120);
+
+        ctx.beginPath();
+        ctx.moveTo(370, 0);
+        ctx.lineTo(428, 112);
+        ctx.stroke();
+
+        ctx.fillRect(415, 0, 30, 120);
+
+        
+
+    </script>
+</body>
+</html>

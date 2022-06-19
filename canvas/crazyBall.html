@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        canvas {
+            border:  1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500" height="500"></canvas>
+    <script>
+    const canvas = document.querySelector('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // ctx.lineWidth = 30;
+    // ctx.beginPath();
+    // ctx.arc(200, 200, 30, 0, Math.PI * 2);
+    // ctx.fillStyle = "orange";
+    // ctx.fill();
+    
+    class Ball {
+        constructor() {
+            this.xPos = 200;
+            this.yPos = 200;
+            this.xSpeed = 6;
+            this.ySpeed = 5;   
+        }
+
+        drawBall() {
+            ctx.lineWidth = 30;
+            ctx.beginPath();
+            ctx.arc(this.xPos, this.yPos, 30, 0, Math.PI * 2);
+            ctx.fillStyle = "mediumslateblue";
+            ctx.fill();
+        }
+
+        moveBall() {
+            this.xPos += this.xSpeed;
+            this.yPos += this.ySpeed;
+        }
+
+        collisionBall() {
+            if(this.xPos < 30 || this.xPos > 470){
+                this.xSpeed = -this.xSpeed; // 캔버스 영역 넘어가는 순간 좌표값을 빼줘서 다시 더 멀리 이동하기
+            }
+            if(this.yPos < 30 || this.yPos > 470){
+                this.ySpeed = -this.ySpeed;
+            }
+        }
+    }
+
+    const theBall = new Ball();
+
+    // 공이 가지고 있는 기능이라기 보단.. 우리가 갖고노는 것
+    function play() {
+        ctx.clearRect(0, 0, 500, 500);
+        theBall.drawBall();
+        theBall.moveBall();
+        theBall.collisionBall();
+        window.requestAnimationFrame(play);
+    }
+    window.requestAnimationFrame(play);
+
+    
+    </script>
+</body>
+</html>
